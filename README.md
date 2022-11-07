@@ -99,4 +99,10 @@ Pertama kita harus memasang library di file main.jsx dulu untuk membuat BrowserR
 Kemudian kita buat lagi deh Routes nya di dalam App.jsx
 <br>
 <img src="img/routes.jpg" ><br>
-Nah nanti hasilnya jika di klik akan mengarah ke halaman yang sudah di deklarasikan.<br>
+Nah nanti hasilnya jika di klik akan mengarah ke halaman yang sudah di deklarasikan.<br><br>
+
+
+### **4. Thunk**
+<br><b>Thunk</b><hr>
+  
+Merupakan sebuah Middleware, gambarannya itu dispatch gamau ada si asynchronous karena dia kan ngaret ( ada waiting, dll ) jadi biar si dispatch mauuu maka kita minta tolong make tag Thunk.  Fungsi ini menerima metode pengiriman penyimpanan, yang kemudian akan digunakan untuk mengirim aksi sinkron di dalam isi fungsi setelah operasi asinkron selesai. <br><br>
