@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Writing and Presentation Test Week 7 [31 okt s/d 4 nov]
+## <h4>Nama     : Vania Sasikirana</h4><h4></h4>Group FE 2 - Kelompok 11</h4> <h4>Mentor : Thoriq Nur Faizal</h4>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br>
+<br>
 
-## Available Scripts
 
-In the project directory, you can run:
+### **1. Hooks**
+<br><b>Hooks</b><hr>
+  
+Merupakan sebuah fungsi pada Javascript yang sepaket dengan penggunaan State, setiap sintaks yang awalannya ada use- merupakan sebuah Hooks.<br><br>
+<b>Contoh : </b><hr><br>
+<br>
+<img src="img/hooks.jpg" width="400">
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **2. PropTypes**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br><b>PropTypes</b><hr>
+  
+Merupakan sebuah library yang berfungsi untuk memvalidasi sebuah props, penggunaan PropTypes ini untuk menjaga props agar tidak error. Jika tipe data pada props tidak sesuai maka nanti akan muncul warning di console browser.<br><br>
 
-### `npm test`
+<b>Contoh : </b><hr><br>
+<br>
+<img src="img/profil.jpg" width="400">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+```
+  new component : DokterInfo.jsx
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        import PropTypes from "prop-types";
+    const DokterInfo = ({nama, spesialis, rating}) => {
+        return(
+            <div className="profil">
+                <img src={"https://d1k13df5m14swc.cloudfront.net/photos/Eun-Young-Lee-FNP-293710-circle_large__v2__.png"} width="150"/>  
+                <div>
+                    <h4>Nama Dokter : {nama}</h4>
+                    <p>Spesialis Khusus : {spesialis}</p>
+                    <p>Rate : {rating + 2}</p>
+                </div>
+            </div>
+        )
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    }
+    DokterInfo.prototype = {
+        nama: PropTypes.string,
+        spesialis: PropTypes.string,
+        rating: PropTypes.number,
+    } 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+    export default DokterInfo;
+    
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+file App.jsx : 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+import DokterInfo from './components/DokterInfo'
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+function App() {
+  return (
+    <>
+      {/* <h1>Hellooo</h1> */}
+      <DokterInfo nama={"Ratna Sari"} spesialis={"Gigi"} rating={22}/>
+    </>
+  );
+}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export default App;
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br><br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### **3. React Router**
+<br><b>Router</b><hr>
+  
+Berfungsi untuk menghubungkan link/path halaman web, namun tidak merubah/refresh link webnya. <br><br>
+<b>Contoh : </b><hr><br>
+Pertama kita harus memasang library di file main.jsx dulu untuk membuat BrowserRouter.<br>
+<img src="img/routes0.jpg"><br>
+Kemudian kita buat lagi deh Routes nya di dalam App.jsx
+<br>
+<img src="img/routes.jpg" ><br>
+Nah nanti hasilnya jika di klik akan mengarah ke halaman yang sudah di deklarasikan.<br>
+<img src="img/routes2.jpg"><br><br>
+Kita juga dapat membuat nested route agar penggunaan route menjadi lebih efisien lagi.<br>
+<img src="img/routes3.jpg"><br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **4. Redux**
+<br><b>Redux</b><hr>
+  
+Berfungsi untuk memperpendek jalur pemberian props ke komponen yang lainnya, jadi ga perlu oper-oper tiap komponen, melainkan kita bisa langsung oper ke komponen yang membutuhkan saja. <br><br>
+<b>Contoh : </b><hr><br>
+Pertama kita harus memasang library di file main.jsx dulu untuk membuat BrowserRouter.<br>
+<img src="img/routes0.jpg"><br>
+Kemudian kita buat lagi deh Routes nya di dalam App.jsx
+<br>
+<img src="img/routes.jpg" ><br>
+Nah nanti hasilnya jika di klik akan mengarah ke halaman yang sudah di deklarasikan.<br>
